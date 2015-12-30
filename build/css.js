@@ -14,11 +14,11 @@ module.exports = {
   build: function() {
     var log = Log('css:build');
 
-    var c = gulp.src(config.stylEntryPoint)
+    var c = gulp.src('./src/' + config.styleEntryPoint)
       .pipe(gulpif(config.sourcemaps, sourcemaps.init()))
       .pipe(stylus())
       .pipe(gulpif(config.sourcemaps, sourcemaps.write()))
-      .pipe(concat(config.destCSSFileName))
+      .pipe(concat(config.styleDestFile))
       .pipe(gulpif(config.minify, minify()))
       .pipe(gulp.dest(config.public));
 
@@ -31,8 +31,9 @@ module.exports = {
   },
 
   lint: function() {
-    return gulp.src('./src/**/*.styl')
-      .pipe(stylint());
+    return gulp.src('src/**/*.styl')
+      .pipe(stylint())
+      .pipe(stylint.reporter());
   },
 
   watch: function() {

@@ -27,7 +27,7 @@ function bundle(b) {
   var log = Log('js:build');
 
   return b
-    .add(config.clientEntryPoint)
+    .add('./src/' + config.scriptEntryPoint)
     .on('file', function(file, id) {
       log.debug(file);
     })
@@ -37,7 +37,7 @@ function bundle(b) {
       this.emit('end');
       process.exit(1);
     })
-    .pipe(source(config.destJSFileName))
+    .pipe(source(config.scriptDestFile))
     .pipe(buffer())
     .pipe(gulpif(config.minify, uglify()))
     .pipe(gulp.dest(config.public));
@@ -83,7 +83,7 @@ module.exports = {
       lint(ids, log);
 
       return w.bundle()
-        .pipe(source(config.destJSFileName))
+        .pipe(source(config.scriptDestFile))
         .pipe(buffer())
         .pipe(gulpif(config.minify, uglify()))
         .pipe(gulp.dest(config.public))
