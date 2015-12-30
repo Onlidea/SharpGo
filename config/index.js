@@ -3,7 +3,7 @@ var production = 'production' === process.env.NODE_ENV || argv.production;
 
 var config = {};
 
-config.public = 'public';
+config.public = argv.public || 'public';
 
 config.scriptEntryPoint = argv.scriptEntryPoint || 'boot/boot.js';
 config.styleEntryPoint = argv.styleEntryPoint || 'boot/boot.styl';
