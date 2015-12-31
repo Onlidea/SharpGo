@@ -14,7 +14,7 @@ gulp
   // HTML 相关 tasks
   // ==============================================
 
-  .task('html:build', html.build)
+  .task('html:build', ['public'], html.build)
 
   // ==============================================
   // JavaScript 相关 tasks

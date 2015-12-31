@@ -17,6 +17,9 @@ config.minify = !production && argv.minify;
 config.production = production;
 config.livereload = !production && argv.livereload;
 
+config.port = 7000;
+config.proxyPort = 7070;
+
 config.scriptsPerFolder = {
   '**/*.html': [{
     src: 'js/vendor.bundle.js',
