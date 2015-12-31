@@ -6,8 +6,15 @@ var public = require('./public');
 var serve = require('./serve');
 var assets = require('./assets');
 var clean = require('./clean');
+var html = require('./html');
 
 gulp
+
+  // ==============================================
+  // HTML 相关 tasks
+  // ==============================================
+
+  .task('html:build', html.build)
 
   // ==============================================
   // JavaScript 相关 tasks
