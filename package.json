@@ -39,7 +39,16 @@
     "minimatch": "3.0.0",
     "through2": "2.0.0",
     "vinyl": "1.1.0",
-    "gulp-rename": "1.2.2"
+    "gulp-rename": "1.2.2",
+    "underscore": "latest",
+    "connect": "~2.18.0",
+    "connect-route": "latest",
+    "http-rewrite-middleware": "0.1.6",
+    "cookie": "0.1.2",
+    "open": "0.0.5",
+    "regexp-quote": "0.0.0",
+    "url-pattern": "0.6.0",
+    "request": "2.51.0"
   },
   "engines": {
     "node": "4.0.0",
